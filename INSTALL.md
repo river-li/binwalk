@@ -49,13 +49,16 @@ Binwalk relies on multiple external utilties in order to automatically extract/d
 
 ```bash
 # Install standard extraction utilities
-$ sudo apt-get install mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabextract cramfsprogs cramfsswap squashfs-tools sleuthkit default-jdk lzop srecord
+$ sudo apt-get install mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabextract cramfsswap squashfs-tools sleuthkit default-jdk lzop srecord
+
+$ wget http://launchpadlibrarian.net/251826685/cramfsprogs_1.1-6ubuntu1_amd64.deb
+$ dpkg -i cramfsprogs_1.1-6ubuntu1_amd64.deb
 ```
 
 ```bash
 # Install sasquatch to extract non-standard SquashFS images
 $ sudo apt-get install zlib1g-dev liblzma-dev liblzo2-dev
-$ git clone https://github.com/devttys0/sasquatch
+$ git clone https://github.com/river-li/sasquatch
 $ (cd sasquatch && ./build.sh)
 ```
 
@@ -68,7 +71,7 @@ $ (cd jefferson && sudo python setup.py install)
 
 ```bash
 # Install ubi_reader to extract UBIFS file systems
-$ sudo apt-get install liblzo2-dev python-lzo
+$ sudo apt-get install liblzo2-dev python3-lzo
 $ git clone https://github.com/jrspruitt/ubi_reader
 $ (cd ubi_reader && sudo python setup.py install)
 ```
